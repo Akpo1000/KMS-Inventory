@@ -180,3 +180,34 @@ ORDER BY
 |Emily Phan| 34,005.4392|
 
 Q10 Which customer returned items, and what segment do they belong to?
+```sql
+SELECT 
+    [KMS Sql Case Study].customer_name,
+    [KMS Sql Case Study].Customer_Segment,
+    [KMS Sql Case Study].Order_ID,
+    o.status
+FROM [KMS Sql Case Study]
+JOIN 
+    order_status o ON [KMS Sql Case Study].order_id = o.order_id
+WHERE 
+    o.status = 'Returned'
+```
+*Count the number of returns by segment
+```sql
+SELECT 
+    k.Customer_Segment,
+    COUNT(*) AS Number_of_Returns
+FROM [KMS Sql Case Study] k
+JOIN order_status o ON k.order_id = o.order_id
+WHERE o.status = 'Returned'
+GROUP BY k.Customer_Segment
+ORDER BY Number_of_Returns DESC;
+```
+|Customer_Segment| Number_of_Return|
+|----------------|------------------|
+|Corperate| 334|
+|Home Office| 201|
+|Small Business| 190|
+Consumer|  147 |
+|Total|872|
+
