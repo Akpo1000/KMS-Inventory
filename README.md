@@ -26,9 +26,9 @@ ORDER BY [PRODUCT COUNT] DESC
 ``` 
 |Region| Total Sales|
 |-------------|------------|
-|West| 359754.2755|
-|Ontario| 3063212.47956|
-|Prarie| 2837304.60150|
+|West| 359,754.2755|
+|Ontario| 3,063,212.47956|
+|Prarie| 2,837,304.60150|
 
 Bottom 3 
 ```sql
@@ -40,9 +40,9 @@ ORDER BY [PRODUCT COUNT] ASC
 
 |Region| Total Sales|
 |-------------|------------|
-|Nunavut| 116376.48356|
-|Northwest Territories| 800847.3295|
-|Yukon| 975867.3710|
+|Nunavut| 116,376.48356|
+|Northwest Territories| 800,847.3295|
+|Yukon| 975,867.3710|
 
 + Q3 What were the total sales of appliances in Ontario?
 ```sql
@@ -54,7 +54,7 @@ GROUP BY REGION
 
 |Region|Total Sales|
 |-------|--------|
-|Ontario|3063212.4795|
+|Ontario|3,063,212.4795|
 
 + Q4 Advise the management of KMS on  what to do to increase the revenue from the bottom 10 customers
 The bottom 10 customers
@@ -118,13 +118,26 @@ ORDER BY CUSTOMER_NAME, TOTAL_CUSTOMER_SALES DESC
 
 |S/N|Customer Name|Total Sales|
 |-----|---------------|-------------|
-|  1|  Aaron Bergman |11630.590 | 
-|  2|Aaron Hawkins|27690.72550 |   
-|  3| Aaron Smayling|8835.3235 |
-|  4|Adam Bellavance|11577.580|
-|  5|Adam Hart|26114.26450|
-|  6|Adam Shillingsburg |20059.67550|
-|  7|Adrian Barton|23088.5345|
-|  8|Adrian Hane |795.820 |
-|  9| Adrian Shami |4615.540|
-|  10| Aimee Bixby |2913.650|
+|1|  Aaron Bergman |11630.590 | 
+|2|Aaron Hawkins|27690.72550 |   
+|3| Aaron Smayling|8835.3235 |
+|4|Adam Bellavance|11577.580|
+|5|Adam Hart|26114.26450|
+|6|Adam Shillingsburg |20059.67550|
+|7|Adrian Barton|23088.5345|
+|8|Adrian Hane |795.820 |
+|9| Adrian Shami |4615.540|
+|10| Aimee Bixby |2913.650|
+
+Q7 which small business customer had the highest sales?
+
+```sql
+SELECT TOP 1 CUSTOMER_NAME, CUSTOMER_SEGMENT, SUME ([SALES]) AS [TOTAL SALES]
+FROM [KMS SQL CASE STUDY]
+WHERE CUSTOMER_SEGMENT = 'SMALL BUSINESS'
+GROUP BY CUSTOMER_NAME,CUSTOMER_SEGMENT
+ORDER BY [TOTAL SALES] DESC
+```
+|Customer_Name|Customer_Segment|Total Sales|
+|-------------|----------------|-----------|
+|Dennis Kane| Small Business| 75,967.590500
