@@ -9,11 +9,17 @@ The primary dataset ysed jn this analysis is a CSV file tittled **KSM SQL case s
 + Q1 Which product category had highest sales? 
 ``` sql 
 -- select top 1 
+
 [Product_Category],count
- ([Product_Category])as
- [Product Count] 
+
+([Product_Category])as
+
+[Product Count] 
+
 from [KMS Sql Case Study1]
+
 group by Product_Category
+
 order by [Product Count] desc
 ```
 |product category|product Count|
@@ -22,8 +28,11 @@ order by [Product Count] desc
 + Q2 What are the Top 🔝 3 and bottom 3 in terms of sales? 
 ```sql
 --select top 3 [Region], sum
+
 ([sales]) as [Total Sales]
+
 from [KMS Sql Case Study1]
+
 Order by [Product Count] desc
 ``` 
 |Region| Total Sales|
