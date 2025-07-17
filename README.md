@@ -8,15 +8,15 @@ The primary dataset used in this analysis is a CSV file tittled **KSM SQL case s
 ## SQL Analysis 
 + Q1 Which product category had highest sales? 
 ``` sql 
-SELECT TOP 1 [PRODUCT_CATEGORY], COUNT 
-([PRODUCT_CATEGORY]) AS [PRODUCT COUNT]
-FROM [KMS SQL CASE STUDY1]
-GROUP BY PRODUCT_CATEGORY
-ORDER BY [PRODUCT COUNT] DESC
+SELECT TOP 1 PRODUCT_CATEGORY,
+SUM (SALES) AS TOTAL_SALES
+FROM [KMS Sql Case Study]
+GROUP BY Product_Category
+ORDER BY TOTAL_SALES DESC
 ```
 |product category|product Count|
 |---------------|------------|
-|Office Supplies| 4610|
+|Technology| 5,984,248.182|
 + Q2 What are the Top 🔝 3 and bottom 3 in terms of sales? 
 ```sql
 SELECCT TOP 3 [REGION], SUM 
@@ -60,25 +60,28 @@ GROUP BY REGION
 The bottom 10 customers
 ```sql
 SELECT TOP 10
-PRODUT_CATEGORY,
-CUSTOMER_NAME, 
-SUM ([SALES]) AS [TOTAL SALES]
-FROM [KMS SQL CASE STUDY1]
-GROUP BY PRODUCT_CATEGORY, CUSTOMER_NAME
-ORDER BY [TOTAL SALES] ASC
+    Product_category, 
+	Customer_Name,
+    SUM(Sales) AS Total_Sales
+ from [KMS Sql Case Study]
+GROUP BY 
+    Product_category, Customer_Name
+ORDER BY 
+    Total_Sales ASC;
 ```
-|Customer Name|Total Sales|
-|---------------|-------------|
-| Jeremy Farry   | 85.720     | 
-|Natalie Dechemey| 125.90     |   
-|Nicole Field    | 153.030    |
-| Katrina Edelman | 180.760   |
-|Dorothy Kargatis | 198.080   |
-|Christine Dickson | 293.220  |
-|Eric Murdock     | 343.328   |
-|Chris McAfee     | 350.180   |
-|Rick Huthwaite   | 415. 820  |
-| Mark Hamilton   | 450.990   |
+
+|S/N|Product_Category|Customer Name|Total Sales|
+|----|----------------|---------------|-------------|
+|  1|  Furniture  | Anne McFarland  | 11.70     | 
+|  2| Office Supplies |Tiffany House| 17.06    |   
+|  3| Furniture |Toby Carlisle| 17.30    |
+|  4| Office Supplies | Victor Price| 22.130  |
+|  5| Furniture	|Emily Burns|22.740  |
+|  6|Technology |Bradley Talbott |24.960 |
+|  7| Furniture|Henry MacAllister |25.520 |
+|  8| Technology |Amy Cox	  |25.960 |
+|  9| Office Supplies|Deirdre Greer	 | 26.530 |
+|  10|Office Supplies| Chris McAfee	 | 28.550 |
 
 Base on the data presented and the analysis carried out, my recommendations are as followed;
 * Cross-sell and Up-sell: This can be done through recommending and highlighting premium options inorder to instigate customers which will result in increased sales.
