@@ -150,7 +150,7 @@ SELECT TOP 1
 FROM 
     [KMS Sql Case Study]
 WHERE 
-    CUSTOMER_SEGMENT = 'CORPERATE'
+    CUSTOMER_SEGMENT = 'CORPORATE'
     AND ORDER_DATE BETWEEN '2009-01-01' AND '2012-12-31'
 GROUP BY 
    CUSTOMER_NAME
@@ -192,7 +192,29 @@ JOIN
 WHERE 
     o.status = 'Returned'
 ```
-*Count the number of returns by segment
+* Top 5 Returns
+```sql
+SELECT TOP 5
+    k.customer_name,
+    k.Customer_Segment,
+    COUNT(*) AS Number_of_Returns
+FROM [KMS Sql Case Study] k
+JOIN order_status o ON k.order_id = o.order_id
+WHERE o.status = 'Returned'
+GROUP BY k.customer_name, k.Customer_Segment
+ORDER BY Number_of_Returns DESC;
+```
+
+|Customer_Name|Customer_Segment| Number_of_Return|
+|----------------|------------------|---------|
+|Darren Budd|Consumer| 10|
+|Erin Creighton|Corporate|10|
+|Olvera Toch| Home Office| 8|
+|Brad Thomas| Home Office|7|
+|Helen Wasseman| Home Office|7|
+
+
+* Count the number of returns by segment
 ```sql
 SELECT 
     k.Customer_Segment,
@@ -205,9 +227,11 @@ ORDER BY Number_of_Returns DESC;
 ```
 |Customer_Segment| Number_of_Return|
 |----------------|------------------|
-|Corperate| 334|
+|Corporate| 334|
 |Home Office| 201|
 |Small Business| 190|
 Consumer|  147 |
 |Total|872|
+
+Q11 If the delivery truck is the most economical but the slowest shipping method ad Express Air is the fastest but the most expensive one, do you think the company approriately spent shipping costs based on the priority? Explain answer. 
 
