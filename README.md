@@ -7,6 +7,12 @@ The primary dataset ysed jn this analysis is a CSV file tittled **KSM SQL case s
 + SQL(SQL server) for Analysis 
 ## SQL Analysis 
 Q1 Which product category had highest sales? 
+** sql 
+-- select top 1 
+[Product_Category],count ([Product_Category])as [Product Count] --
+from [KMS Sql Case Study1]
+group by Product_Category
+order by [Product Count] desc
 |product category|product Count|
 |---------------|------------|
 |Office Supplies| 4610|
