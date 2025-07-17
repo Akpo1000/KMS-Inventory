@@ -56,7 +56,7 @@ GROUP BY REGION
 |-------|--------|
 |Ontario|3063212.4795|
 
-+ Q4 Advise the management of KMS o  what to do to increase the revenue from the bottom 10 customers
++ Q4 Advise the management of KMS on  what to do to increase the revenue from the bottom 10 customers
 The bottom 10 customers
 ```sql
 SELECT TOP 10 [CUSTOMER_NAME], SUM ([SALES]) AS [TOTAL SALES]
@@ -76,3 +76,35 @@ ORDER BY [TOTAL SALES] ASC
 |Chris McAfee     | 350.180   |
 |Rick Huthwaite   | 415. 820  |
 | Mark Hamilton   | 450.990   |
+
+Base on the data presented and the analysis carried out, my recommendations are as followed;
+* Cross-sell and Up-sell: This can be done through recommending and highlighting premium options inorder to instigate customers which will result in increased sales.
+
+* Customer Experience: This focuses on understanding customer needs, resolving issues quickly and exceedingly satisfying customer expectations.
+
+* Service Promotion: This focuses on providing incentives to increase sales. For instance, rewarding loyal customers over time instigates more demands from them. 
+
+* Customer Retention: This focuses on sustaining/retaining existing customers by offering accessible or free, value-centred solution/products. 
+
+* Combining Sales and Marketing: This focuses on ensuring that strategic marketing techniques are carried-out in alignment with well-defined/strategic goals of the sales team in order to satisfy the target audience.
+
+Q5 KMS incurred the most shipping cost using which shipping method?
+```sql
+SELECT TOP 1 [SHIP_MODE], SUM([SHIPPING_COST]) AS [TOTAL SHIPPING COST]
+FROM [KMS SQL CASE STUDY1]
+GROUP BY SHIP_MODE
+ORDER BY [TOTAL SHIPPING COST]DESC
+```
+|Ship Mode| Total Shipping Cost|
+|--------|-------------------|
+|Delivery Truck| 51971.940|
+
+Q6 Who are the most valuable customers, and what products or services do they typically purchase?
+
+```sql
+SELECT [CUSTOMER_NAME], PRODUCT_NAME, SUM(SALES) AS [TOTAL SALES]
+FROM [KMS SQL CASE STUDY1]
+GROUP BY CUSTOMER_NAME, PRODUCT_NAME
+ORDER BY [TOTAL SALES] DESC
+```
+
