@@ -59,9 +59,12 @@ GROUP BY REGION
 + Q4 Advise the management of KMS on  what to do to increase the revenue from the bottom 10 customers
 The bottom 10 customers
 ```sql
-SELECT TOP 10 [CUSTOMER_NAME], SUM ([SALES]) AS [TOTAL SALES]
+SELECT TOP 10
+PRODUT_CATEGORY,
+CUSTOMER_NAME, 
+SUM ([SALES]) AS [TOTAL SALES]
 FROM [KMS SQL CASE STUDY1]
-GROUP BY CUSTOMER_NAME
+GROUP BY PRODUCT_CATEGORY, CUSTOMER_NAME
 ORDER BY [TOTAL SALES] ASC
 ```
 |Customer Name|Total Sales|
