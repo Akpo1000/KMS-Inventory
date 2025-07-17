@@ -2,38 +2,27 @@
 ## Project Overview 
 Kultra Mega Stores (KMS), headquartered in Lagos, specialises in office supplies and large corporate clients (wholesale) across Lagos, Nigeria. 
 ## Data Source 
-The primary dataset ysed jn this analysis is a CSV file tittled **KSM SQL case study.CSV**
+The primary dataset used in this analysis is a CSV file tittled **KSM SQL case study.CSV**
 ## Tool  
 + SQL(SQL server) for Analysis 
 ## SQL Analysis 
 + Q1 Which product category had highest sales? 
 ``` sql 
--- select top 1 
-
-[Product_Category],count
-
-([Product_Category])as
-
-[Product Count] 
-
-from [KMS Sql Case Study1]
-
-group by Product_Category
-
-order by [Product Count] desc
+SELECT TOP 1 [PRODUCT_CATEGORY], COUNT 
+([PRODUCT_CATEGORY]) AS [PRODUCT COUNT]
+FROM [KMS SQL CASE STUDY1]
+GROUP BY PRODUCT_CATEGORY
+ORDER BY [PRODUCT COUNT] DESC
 ```
 |product category|product Count|
 |---------------|------------|
 |Office Supplies| 4610|
 + Q2 What are the Top 🔝 3 and bottom 3 in terms of sales? 
 ```sql
---select top 3 [Region], sum
-
-([sales]) as [Total Sales]
-
-from [KMS Sql Case Study1]
-
-Order by [Product Count] desc
+SELECCT TOP 3 [REGION], SUM 
+([SALES]) AS [TOTAL SALES] 
+FROM [KMS SQL CASE STUDY1]
+ORDER BY [PRODUCT COUNT] DESC 
 ``` 
 |Region| Total Sales|
 |-------------|------------|
@@ -42,6 +31,12 @@ Order by [Product Count] desc
 |Prarie| 2837304.60150|
 
 Bottom 3 
+```sql
+SELECCT TOP 3 [REGION], SUM 
+([SALES]) AS [TOTAL SALES] 
+FROM [KMS SQL CASE STUDY1]
+ORDER BY [PRODUCT COUNT] ASC
+``` 
 
 |Region| Total Sales|
 |-------------|------------|
@@ -50,14 +45,29 @@ Bottom 3
 |Yukon| 975867.3710|
 
 + Q3 What were the total sales of appliances in Ontario?
-  
-|Region| Total Sales|
-|------------|----------|
-|Ontario| 3063212.4795|
+```sql
+SELECT REGION, SUM (SALES) AS [TOTAL SALES]
+FROM [KMS SQL CASE STUDY1]
+WHERE REGION = 'ONTARIO'
+GROUP BY REGION
+
+|Region|Total Sales|
+|-------|--------|
+|Ontario|3063212.4795|
+
+
+|Region|Total Sales|
+|-------|--------|
+|Ontario|3063212.4795|
+
 
 + Q4 Advise the management of KMS o  what to do to increase the revenue from the bottom 10 customers
-The bottom 10 customers 
-  
+The bottom 10 customers
+SELECT TOP 10 [CUSTOMER_NAME], SUM ([SALES]) AS [TOTAL SALES]
+FROM [KMS SQL CASE STUDY1]
+GROUP BY CUSTOMER_NAME
+ORDER BY [TOTAL SALES] ASC
+
 |Customer Name|Total Sales|
 |---------------|-------------|
 | Jeremy Farry   | 85.720     | 
@@ -66,7 +76,7 @@ The bottom 10 customers
 | Katrina Edelman | 180.760   |
 |Dorothy Kargatis | 198.080   |
 |Christine Dickson | 293.220  |
-|Eric Murdock     | 343.328  |
-|Chris McAfee    | 350.180   |
+|Eric Murdock     | 343.328   |
+|Chris McAfee     | 350.180   |
 |Rick Huthwaite   | 415. 820  |
 | Mark Hamilton   | 450.990   |
