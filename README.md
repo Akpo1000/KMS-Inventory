@@ -234,4 +234,21 @@ Consumer|  147 |
 |Total|872|
 
 Q11 If the delivery truck is the most economical but the slowest shipping method ad Express Air is the fastest but the most expensive one, do you think the company approriately spent shipping costs based on the priority? Explain answer. 
+```sql
+SELECT 
+    Order_Priority,
+    Ship_Mode,
+    sum(Shipping_Cost)  AS Total_shipping_cost_for_priority,
+    count(Order_ID) AS number_of_shipping_cost_for_priority_ship_mode
+FROM 
+    [KMS Sql Case Study]
+GROUP BY 
+    Order_Priority, Ship_Mode
+ORDER BY 
+    Order_Priority, Total_shipping_cost_for_priority Desc;
+```
+|Order-Priority|Ship_Mode|Total_Shipping_Cost_For_Prority|Number_Of_Shipping_Cost_For_Priority_Ship_Mode|
+|---------|-------|--------|--------|
 
+* Recommendation 
+After analysing the data, I discovered that hight-cost shipping methods (e.g Express Air) were frequently used for low-priority orders While, Hiht priority orders gowith delivery Truck (slow delivery despite urgency)
