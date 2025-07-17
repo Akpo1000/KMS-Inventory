@@ -36,7 +36,7 @@ SELECCT TOP 3 [REGION], SUM
 ([SALES]) AS [TOTAL SALES] 
 FROM [KMS SQL CASE STUDY1]
 ORDER BY [PRODUCT COUNT] ASC
-``` 
+```
 
 |Region| Total Sales|
 |-------------|------------|
@@ -50,24 +50,20 @@ SELECT REGION, SUM (SALES) AS [TOTAL SALES]
 FROM [KMS SQL CASE STUDY1]
 WHERE REGION = 'ONTARIO'
 GROUP BY REGION
+```
 
 |Region|Total Sales|
 |-------|--------|
 |Ontario|3063212.4795|
-
-
-|Region|Total Sales|
-|-------|--------|
-|Ontario|3063212.4795|
-
 
 + Q4 Advise the management of KMS o  what to do to increase the revenue from the bottom 10 customers
 The bottom 10 customers
+```sql
 SELECT TOP 10 [CUSTOMER_NAME], SUM ([SALES]) AS [TOTAL SALES]
 FROM [KMS SQL CASE STUDY1]
 GROUP BY CUSTOMER_NAME
 ORDER BY [TOTAL SALES] ASC
-
+```
 |Customer Name|Total Sales|
 |---------------|-------------|
 | Jeremy Farry   | 85.720     | 
