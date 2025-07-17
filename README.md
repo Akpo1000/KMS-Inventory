@@ -108,9 +108,23 @@ ORDER BY [TOTAL SHIPPING COST]DESC
 Q6 Who are the most valuable customers, and what products or services do they typically purchase?
 
 ```sql
-SELECT [CUSTOMER_NAME], PRODUCT_NAME, SUM(SALES) AS [TOTAL SALES]
-FROM [KMS SQL CASE STUDY1]
-GROUP BY CUSTOMER_NAME, PRODUCT_NAME
-ORDER BY [TOTAL SALES] DESC
+SELECT TOP 10 
+     CUSTOMER_NAME,
+	 SUM(SALES) AS TOTAL_CUSTOMER_SALES
+FROM  [KMS Sql Case Study]
+GROUP BY CUSTOMER_NAME
+ORDER BY CUSTOMER_NAME, TOTAL_CUSTOMER_SALES DESC 
 ```
 
+|S/N|Customer Name|Total Sales|
+|-----|---------------|-------------|
+|  1|  Aaron Bergman |11630.590 | 
+|  2|Aaron Hawkins|27690.72550 |   
+|  3| Aaron Smayling|8835.3235 |
+|  4|Adam Bellavance|11577.580|
+|  5|Adam Hart|26114.26450|
+|  6|Adam Shillingsburg |20059.67550|
+|  7|Adrian Barton|23088.5345|
+|  8|Adrian Hane |795.820 |
+|  9| Adrian Shami |4615.540|
+|  10| Aimee Bixby |2913.650|
