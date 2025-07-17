@@ -141,3 +141,22 @@ ORDER BY [TOTAL SALES] DESC
 |Customer_Name|Customer_Segment|Total Sales|
 |-------------|----------------|-----------|
 |Dennis Kane| Small Business| 75,967.590500
+
+Q8 Which corperate customer placed the most number of order in 2019 - 2012
+```sql
+SELECT TOP 1
+    CUSTOMER_NAME,
+    COUNT(DISTINCT Order_ID) AS TOTAL_ORDERS
+FROM 
+    [KMS Sql Case Study]
+WHERE 
+    CUSTOMER_SEGMENT = 'CORPERATE'
+    AND ORDER_DATE BETWEEN '2009-01-01' AND '2012-12-31'
+GROUP BY 
+   CUSTOMER_NAME
+ORDER BY 
+    TOTAL_ORDERS DESC;
+```
+|CUSTOMER_NAME|TOTAL ORDER|
+|------------|-----------|
+|Adam Hart|  18|
