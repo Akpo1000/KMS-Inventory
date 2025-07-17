@@ -160,3 +160,23 @@ ORDER BY
 |CUSTOMER_NAME|TOTAL ORDER|
 |------------|-----------|
 |Adam Hart|  18|
+
+Q9 Which consumer was the most profitable one?
+```sql
+SELECT TOP 1
+    CUSTOMER_NAME,
+    SUM(PROFIT) AS TOTAL_PROFIT
+FROM 
+     [KMS Sql Case Study]
+WHERE 
+    CUSTOMER_SEGMENT= 'CONSUMER'
+GROUP BY 
+    CUSTOMER_NAME
+ORDER BY 
+    TOTAL_PROFIT DESC;
+````
+|CUSTOMER_NAME|TOTAL PROFIT|
+|------------|-----------|
+|Emily Phan| 34,005.4392|
+
+Q10 Which customer returned items, and what segment do they belong to?
