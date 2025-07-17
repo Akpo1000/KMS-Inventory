@@ -54,3 +54,19 @@ Bottom 3
 |Region| Total Sales|
 |------------|----------|
 |Ontario| 3063212.4795|
+
++ Q4 Advise the management of KMS o  what to do to increase the revenue from the bottom 10 customers
+The bottom 10 customers 
+  
+|Customer Name|Total Sales|
+|---------------|-------------|
+| Jeremy Farry   | 85.720     | 
+|Natalie Dechemey| 125.90     |   
+|Nicole Field    | 153.030    |
+| Katrina Edelman | 180.760   |
+|Dorothy Kargatis | 198.080   |
+|Christine Dickson | 293.220  |
+|Eric Murdock     | 343.328  |
+|Chris McAfee    | 350.180   |
+|Rick Huthwaite   | 415. 820  |
+| Mark Hamilton   | 450.990   |
