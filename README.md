@@ -5,3 +5,5 @@ Kultra Mega Stores (KMS), headquartered in Lagos, specialises in office supplies
 The primary dataset ysed jn this analysis is a CSV file tittled **KSM SQL case study.CSV**
 ## Tool  
 + SQL(SQL server) for Analysis 
+## SQL Analysis 
++ Which product category had highest sales? 
