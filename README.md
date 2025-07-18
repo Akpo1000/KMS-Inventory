@@ -249,7 +249,25 @@ ORDER BY
 ```
 |Order-Priority|Ship_Mode|Total_Shipping_Cost_For_Prority|Number_Of_Shipping_Cost_For_Priority_Ship_Mode|
 |---------|-------|--------|--------|
+|Critical|Delivery Truck|10,783.820|228|
+|Critical|Regular Air|8,586.760|1180|
+|Critical|Express Air|1,742.100|200|
+|High|Delivery Truck|11,206.880|248|
+|High|Regular Air|10,005.010|1308|
+|High|Express Air|1,453.530|212|
+|Low|Delivery Truck|11,131.610|250|
+|Low|Regular Air|10,263.620|1280|
+|Low|Express Air|1,551.630|190|
+|Medium|Delivery Truck|9,461.630|205|
+|Medium|Regular Air|9,418.720|1225|
+|Medium|Express Air|1,633.590|201|
+|Not Specified|Regular Air|9,734.080|1277|
+|Not Specified|Delivery Truck|9,388.010|215|
+|Not Specified|Express Air|1,470.060|180|
 
 * Recommendation 
 
-After analyzing the data, I discovered that high-cost shipping methods (e.g Express Air) were frequently used for low-priority orders While, high-priority orders go with delivery Truck (slow delivery despite urgency)
+After analyzing the data, I discovered that high-cost shipping methods (e.g., Express Air) were frequently used for low-priority orders, while high-priority orders were more associated with delivery by Truck (resulting in delayed delivery despite urgency). This suggests inefficiency in operations or poor logistics/planning.
++ Recommendations 
+- Implement a layered shipping guideline that aligns delivery mode with order priority.
+- Introducing checks or an approval process for expensive methods can reduce unnecessary spending.
