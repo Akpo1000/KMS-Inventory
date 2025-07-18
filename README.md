@@ -268,6 +268,7 @@ ORDER BY
 * Recommendation 
 
 After analyzing the data, I discovered that high-cost shipping methods (e.g., Express Air) were frequently used for low-priority orders, while high-priority orders were more associated with delivery by Truck (resulting in delayed delivery despite urgency). This suggests inefficiency in operations or poor logistics/planning.
-+ Recommendations 
+
+Recommendation are;
 - Implement a layered shipping guideline that aligns delivery mode with order priority.
-- Introducing checks or an approval process for expensive methods can reduce unnecessary spending.
+- Introducing checks or an approval process for expensive shipping mode can reduce unnecessary spending.
