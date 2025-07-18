@@ -251,4 +251,5 @@ ORDER BY
 |---------|-------|--------|--------|
 
 * Recommendation 
-After analysing the data, I discovered that hight-cost shipping methods (e.g Express Air) were frequently used for low-priority orders While, Hiht priority orders gowith delivery Truck (slow delivery despite urgency)
+
+After analysing the data, I discovered that hight-cost shipping methods (e.g Express Air) were frequently used for low-priority orders While, Hiht priority orders go with delivery Truck (slow delivery despite urgency)
